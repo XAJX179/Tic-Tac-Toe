@@ -1,14 +1,12 @@
 # Functions for game
 module Game
   def self.start
-    p1 = Player.new
-    p2 = Player.new
-    # board = Board.new
-
-    puts p1.input
-
-    puts p2.input
+    board = Board.new
+    p1 = Player.new("X")
+    p2 = Player.new("O")
+    run_loop(board, p1, p2)
   end
 
-  def self.winner?(player) end
+  def self.run_loop(board, ply1, ply2)
+  end
 end

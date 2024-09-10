@@ -6,10 +6,13 @@ class Board
     puts "Welcome!"
     puts "Tic-Tac-Toe! Start!"
     @pos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    @used = []
     draw
   end
 
   public
+
+  attr_reader :used, :pos
 
   def draw
     puts "\t #{@pos[0]} #{@pos[1]} #{@pos[2]}"
@@ -19,5 +22,6 @@ class Board
 
   def update(index, value)
     @pos[index] = value
+    @used.push = value
   end
 end
