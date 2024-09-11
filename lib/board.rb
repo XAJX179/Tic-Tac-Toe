@@ -6,13 +6,23 @@ class Board
     puts "Welcome!"
     puts "Tic-Tac-Toe! Start!"
     @pos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    @conditions = [[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9],
+                   [1, 4, 7],
+                   [2, 5, 8],
+                   [3, 6, 9],
+                   [1, 5, 9],
+                   [3, 5, 7]]
     @used = []
+    @winner = "none"
     draw
   end
 
   public
 
-  attr_reader :used, :pos
+  attr_reader :used, :pos, :conditions
+  attr_accessor :winner
 
   def draw
     puts "\t #{@pos[0]} #{@pos[1]} #{@pos[2]}"
@@ -22,6 +32,6 @@ class Board
 
   def update(index, value)
     @pos[index] = value
-    @used.push = value
+    @used.push(value)
   end
 end

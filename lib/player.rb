@@ -10,7 +10,7 @@ class Player
 
   public
 
-  attr_reader :sign
+  attr_reader :sign, :name
 
   def input
     puts "#{@name}'s turn (you are #{@sign}): "
