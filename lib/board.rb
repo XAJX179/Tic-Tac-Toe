@@ -1,4 +1,4 @@
-# Board to diplay everything
+# Board to display everything
 class Board
   private
 
@@ -6,14 +6,7 @@ class Board
     puts "Welcome!"
     puts "Tic-Tac-Toe! Start!"
     @pos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    @conditions = [[1, 2, 3],
-                   [4, 5, 6],
-                   [7, 8, 9],
-                   [1, 4, 7],
-                   [2, 5, 8],
-                   [3, 6, 9],
-                   [1, 5, 9],
-                   [3, 5, 7]]
+    @conditions = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
     @used = []
     @winner = "none"
     draw

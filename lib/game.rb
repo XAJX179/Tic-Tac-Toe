@@ -11,7 +11,7 @@ module Game
     pos = take_input(player, board)
     handle_board(player, board, pos)
     winner(player, board)
-    sleep 2
+    sleep 1
   end
 
   def self.run_loop(board, ply1, ply2)
@@ -36,11 +36,24 @@ module Game
   end
 
   def self.winner(player, board)
-    # if won
-    #   board.winner = player.name.to_s
-    # elsif full
-    #   board.winner = 'Tie'
-    #   puts "It's a tie  "
-    # end
+    won = check_win(player, board)
+    if won
+      board.winner = player.name.to_s
+      player.won
+    elsif check_draw(board)
+      board.winner = "Tie"
+      puts "It's a tie  "
+    end
+  end
+
+  def self.check_win(player, board)
+    board.conditions.map do |condition|
+      nil if (board.pos - [player.sign] - condition) == (board.pos - [player.sign])
+    end
+    board.conditions.any?(nil)
+  end
+
+  def self.check_draw(board)
+    board.used.length == 9
   end
 end
