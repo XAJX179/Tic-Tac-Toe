@@ -11,7 +11,6 @@ module Game
     pos = take_input(player, board)
     handle_board(player, board, pos)
     winner(player, board)
-    sleep 1
   end
 
   def self.run_loop(board, ply1, ply2)
