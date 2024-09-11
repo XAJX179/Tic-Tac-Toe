@@ -1,3 +1,3 @@
-source "https://rubygems.org"
-gem "rubocop"
+source 'https://rubygems.org'
+gem 'rubocop'
 # gem "rails"

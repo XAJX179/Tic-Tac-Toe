@@ -3,7 +3,7 @@ class Player
   private
 
   def initialize(sign)
-    puts "Enter a name : "
+    puts 'Enter a name : '
     @name = gets.chomp
     @sign = sign
   end

@@ -1,8 +1,8 @@
 # Functions for game
 module Game
   def self.start
-    ply1 = Player.new("X")
-    ply2 = Player.new("O")
+    ply1 = Player.new('X')
+    ply2 = Player.new('O')
     board = Board.new
     run_loop(board, ply1, ply2)
   end
@@ -16,10 +16,10 @@ module Game
   def self.run_loop(board, ply1, ply2)
     loop do
       game_loop(ply1, board)
-      break if board.winner != "none"
+      break if board.winner != 'none'
 
       game_loop(ply2, board)
-      break if board.winner != "none"
+      break if board.winner != 'none'
     end
   end
 
@@ -39,11 +39,11 @@ module Game
     if won
       board.winner = player.name
       player.won
-      puts "Game Over."
+      puts 'Game Over.'
     elsif check_draw(board)
-      board.winner = "Tie"
+      board.winner = 'Tie'
       puts "It's a tie  ¯\\_(ツ)_/¯"
-      puts "Game Over."
+      puts 'Game Over.'
     end
   end
 
