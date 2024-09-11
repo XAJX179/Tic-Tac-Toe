@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Functions for game
 module Game
   def self.start

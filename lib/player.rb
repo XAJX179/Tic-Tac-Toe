@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Player class for creating players object
 class Player
   private

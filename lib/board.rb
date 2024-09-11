@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Board to display everything
 class Board
   private
