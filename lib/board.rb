@@ -24,7 +24,7 @@ class Board
   end
 
   def update(index, value)
+    @used.push(@pos[index])
     @pos[index] = value
-    @used.push(value)
   end
 end

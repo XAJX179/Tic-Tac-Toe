@@ -26,7 +26,7 @@ module Game
 
   def self.take_input(player, board)
     input = nil
-    input = player.input until board.pos.include?(input) && !board.used.include?(input)
+    input = player.input until board.pos.include?(input)
     input
   end
 
@@ -38,19 +38,28 @@ module Game
   def self.winner(player, board)
     won = check_win(player, board)
     if won
-      board.winner = player.name.to_s
+      board.winner = player.name
       player.won
+      puts "Game Over."
     elsif check_draw(board)
       board.winner = "Tie"
-      puts "It's a tie  "
+      puts "It's a tie  ¯\\_(ツ)_/¯"
+      puts "Game Over."
     end
   end
 
   def self.check_win(player, board)
-    board.conditions.map do |condition|
-      nil if (board.pos - [player.sign] - condition) == (board.pos - [player.sign])
+    conditions = board.conditions
+    result = false
+    conditions.each do |condition|
+      # because array index starts at 0
+      result_array = [board.pos[condition[0] - 1], board.pos[condition[1] - 1], board.pos[condition[2] - 1]]
+      if result_array.all?(player.sign)
+        result = true
+        break
+      end
     end
-    board.conditions.any?(nil)
+    result
   end
 
   def self.check_draw(board)

@@ -18,6 +18,6 @@ class Player
   end
 
   def won
-    puts "#{@name} won!!!"
+    puts "#{@name} won!!! ヾ(⌐■_■)ノ"
   end
 end
