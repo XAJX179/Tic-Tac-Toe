@@ -16,7 +16,7 @@ class Player
 
   def input
     puts "#{@name}'s turn (you are #{@sign}): "
-    gets.chars.first.to_i
+    gets[0].to_i
   end
 
   def won
