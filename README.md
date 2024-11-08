@@ -2,6 +2,7 @@
 - Play Tic-Tac-Toe in terminal.
 # Peek
 <img src="./tic_tac_toe.png">
+
 ### note
   u gotta fork on replit to run ¯\\\_(ツ)\_/¯
 
